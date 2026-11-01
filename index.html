@@ -35,10 +35,14 @@ h1{font-size:26px;line-height:1.2;margin:0 0 6px}.intro{color:var(--muted);margi
 .sheet-actions{display:flex;gap:10px}.sheet-actions button{flex:1;font:inherit;font-weight:700;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--accent);color:var(--accent-ink);cursor:pointer}
 .sheet-actions .ghost{background:transparent;color:var(--ink)}
 .status{margin:0;color:var(--muted);min-height:1.2em}
+.tabs{display:flex;gap:8px;margin:0 0 20px}
+.tab{flex:1;font:inherit;font-weight:700;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);cursor:pointer}
+.tab.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 footer{color:var(--muted);font-size:14px;text-align:center}
 </style></head><body><div class="wrap">
 <h1>Story Chicken · 1–30 Νοεμβρίου 2026</h1>
 <p class="intro">Προεπισκόπηση των posts πριν δημοσιευτούν. Αν θέλετε αλλαγή σε κάποιο post, πατήστε «Ζήτα αλλαγή» κάτω από αυτό και γράψτε τι θέλετε να αλλάξει.</p>
+<div class="tabs"><button type="button" class="tab on" data-f="post">Posts</button><button type="button" class="tab" data-f="story">Stories</button></div>
 
 <article class="card" id="post-1">
   <header><span class="num">#1</span><div><div class="date">Τρίτη 3 Νοεμβρίου · 09:00</div>
@@ -228,6 +232,26 @@ Wings ή φιλέτα; Μία απάντηση 👇
 <div class="sheet-actions"><button type="button" id="cancel" class="ghost">Άκυρο</button><button type="submit" id="send">Αποστολή</button></div>
 <p id="status" class="status"></p>
 </form></div>
+<script>
+(function(){
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function(c){
+    var isStory = /Story/.test(c.querySelector('.meta').textContent);
+    c.dataset.kind = isStory ? 'story' : 'post';
+  });
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function(t){
+    var n = document.querySelectorAll('.card[data-kind="' + t.dataset.f + '"]').length;
+    t.textContent = (t.dataset.f === 'post' ? 'Posts' : 'Stories') + ' (' + n + ')';
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.toggle('on', x === t); });
+      cards.forEach(function(c){ c.hidden = c.dataset.kind !== t.dataset.f; });
+      window.scrollTo(0, 0);
+    });
+  });
+  tabs[0].click();
+})();
+</script>
 <script>
 var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwsgRQBCwbbG4gml_GZRtg5wQlf1svUv-wofJB7cDFjvg5MF5cByOPre8kBHqExd1nWrQ/exec';
 var sheet = document.getElementById('sheet');
