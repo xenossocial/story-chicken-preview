@@ -23,7 +23,18 @@ h1{font-size:26px;line-height:1.2;margin:0 0 6px}.intro{color:var(--muted);margi
 .hint{text-align:center;color:var(--muted);font-size:13px;margin-top:4px}
 .caption{white-space:pre-wrap;margin:14px 0 0}.comment{white-space:pre-wrap;color:var(--muted);font-size:14px;margin:10px 0 0}
 .muted{color:var(--muted)}.empty{padding:40px;text-align:center;color:var(--muted)}
-.actions{margin:14px 0 0}.change{display:block;text-align:center;padding:12px;border:1px solid var(--line);border-radius:12px;color:var(--ink);text-decoration:none;font-weight:700}
+.actions{margin:14px 0 0}
+.change{width:100%;font:inherit;font-weight:700;padding:12px;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--ink);cursor:pointer}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:flex-end;justify-content:center;z-index:10}
+.sheet[hidden]{display:none}
+.sheet-box{background:var(--card);color:var(--ink);width:100%;max-width:560px;border-radius:16px 16px 0 0;padding:20px 16px 24px;display:flex;flex-direction:column;gap:12px}
+.sheet-box h2{margin:0;font-size:20px}.sheet-post{margin:0;color:var(--muted)}
+.sheet-box label{display:flex;flex-direction:column;gap:6px;font-weight:600}
+.sheet-box textarea,.sheet-box input{font:inherit;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.hp{position:absolute;left:-9999px}
+.sheet-actions{display:flex;gap:10px}.sheet-actions button{flex:1;font:inherit;font-weight:700;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.sheet-actions .ghost{background:transparent;color:var(--ink)}
+.status{margin:0;color:var(--muted);min-height:1.2em}
 footer{color:var(--muted);font-size:14px;text-align:center}
 </style></head><body><div class="wrap">
 <h1>Story Chicken · 1–30 Νοεμβρίου 2026</h1>
@@ -35,7 +46,7 @@ footer{color:var(--muted);font-size:14px;text-align:center}
   <div class="frame" style="aspect-ratio:9/16"><img loading="lazy" src="media/412769226-0.jpg" alt=""></div>
   <p class="caption"><span class="muted">Χωρίς λεζάντα (story)</span></p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%231&body=Post%20%231%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="1">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-2">
   <header><span class="num">#2</span><div><div class="date">Τετάρτη 4 Νοεμβρίου · 09:30</div>
@@ -52,7 +63,7 @@ Tag αυτόν που θα έρθει μαζί σου την Τρίτη 👇
 
 #storychicken #friedchicken #αιγαλεω #crispychicken #streetfood</p>
   <p class="comment"><b>1ο σχόλιο:</b> Ο κόκορας είναι καλά. Απλώς ακόμα επεξεργάζεται.</p>
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%232&body=Post%20%232%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="2">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-3">
   <header><span class="num">#3</span><div><div class="date">Πέμπτη 5 Νοεμβρίου · 09:00</div>
@@ -60,7 +71,7 @@ Tag αυτόν που θα έρθει μαζί σου την Τρίτη 👇
   <div class="frame" style="aspect-ratio:9/16"><img loading="lazy" src="media/412769238-0.jpg" alt=""></div>
   <p class="caption"><span class="muted">Χωρίς λεζάντα (story)</span></p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%233&body=Post%20%233%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="3">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-4">
   <header><span class="num">#4</span><div><div class="date">Σάββατο 7 Νοεμβρίου · 09:00</div>
@@ -68,7 +79,7 @@ Tag αυτόν που θα έρθει μαζί σου την Τρίτη 👇
   <div class="frame" style="aspect-ratio:9/16"><img loading="lazy" src="media/412769266-0.jpg" alt=""></div>
   <p class="caption"><span class="muted">Χωρίς λεζάντα (story)</span></p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%234&body=Post%20%234%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="4">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-5">
   <header><span class="num">#5</span><div><div class="date">Δευτέρα 9 Νοεμβρίου · 09:00</div>
@@ -76,7 +87,7 @@ Tag αυτόν που θα έρθει μαζί σου την Τρίτη 👇
   <div class="frame" style="aspect-ratio:9/16"><img loading="lazy" src="media/412769247-0.jpg" alt=""></div>
   <p class="caption"><span class="muted">Χωρίς λεζάντα (story)</span></p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%235&body=Post%20%235%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="5">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-6">
   <header><span class="num">#6</span><div><div class="date">Τρίτη 10 Νοεμβρίου · 09:00</div>
@@ -84,7 +95,7 @@ Tag αυτόν που θα έρθει μαζί σου την Τρίτη 👇
   <div class="frame" style="aspect-ratio:9/16"><img loading="lazy" src="media/412769285-0.jpg" alt=""></div>
   <p class="caption"><span class="muted">Χωρίς λεζάντα (story)</span></p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%236&body=Post%20%236%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="6">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-7">
   <header><span class="num">#7</span><div><div class="date">Τετάρτη 11 Νοεμβρίου · 10:00</div>
@@ -102,7 +113,7 @@ Tag αυτόν που θα το έτρωγε όλο μόνος του 👇
 
 #storychicken #friedchicken #αιγαλεω #wings #friedchickenbucket</p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%237&body=Post%20%237%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="7">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-8">
   <header><span class="num">#8</span><div><div class="date">Παρασκευή 13 Νοεμβρίου · 10:00</div>
@@ -119,7 +130,7 @@ Crispy φιλέτο, λιωμένη cheddar, τραγανό bacon. Κρατιέ�
 
 #storychicken #friedchicken #αιγαλεω #chickenburger #cheesebacon</p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%238&body=Post%20%238%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="8">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-9">
   <header><span class="num">#9</span><div><div class="date">Δευτέρα 16 Νοεμβρίου · 09:00</div>
@@ -136,7 +147,7 @@ Tag αυτόν που το λέει πάντα 👇
 
 #storychicken #friedchicken #αιγαλεω #lavahot #spicy #wings</p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%239&body=Post%20%239%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="9">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-10">
   <header><span class="num">#10</span><div><div class="date">Πέμπτη 19 Νοεμβρίου · 09:00</div>
@@ -153,7 +164,7 @@ Tag αυτόν που τελειώνει το bucket πριν το ημίχρο�
 
 #storychicken #friedchicken #αιγαλεω #bucket #friedchickenbucket</p>
   <p class="comment"><b>1ο σχόλιο:</b> Ο κόκορας ζητάει συγγνώμη από την παρέα. Με το βλέμμα.</p>
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%2310&body=Post%20%2310%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="10">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-11">
   <header><span class="num">#11</span><div><div class="date">Σάββατο 21 Νοεμβρίου · 09:00</div>
@@ -170,7 +181,7 @@ Tag αυτόν που σου κλέβει πάντα από το κουτί 👇
 
 #storychicken #friedchicken #αιγαλεω #wings #crispychicken</p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%2311&body=Post%20%2311%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="11">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-12">
   <header><span class="num">#12</span><div><div class="date">Δευτέρα 23 Νοεμβρίου · 08:00</div>
@@ -187,7 +198,7 @@ Tag αυτόν που σου κλέβει πάντα από το κουτί 👇
 
 #storychicken #friedchicken #αιγαλεω #wings #crispychicken</p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%2312&body=Post%20%2312%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="12">Ζήτα αλλαγή</button></p>
 </article>
 <article class="card" id="post-13">
   <header><span class="num">#13</span><div><div class="date">Πέμπτη 26 Νοεμβρίου · 08:00</div>
@@ -204,9 +215,52 @@ Wings ή φιλέτα; Μία απάντηση 👇
 
 #storychicken #friedchicken #αιγαλεω #bucket #friedchickenbucket</p>
   
-<p class="actions"><a class="change" href="mailto:george.fylypchuk@gmail.com?subject=Story%20Chicken%20%C2%B7%20%CE%B1%CE%BB%CE%BB%CE%B1%CE%B3%CE%AE%20%CF%83%CF%84%CE%BF%20%2313&body=Post%20%2313%3A%20">Ζήτα αλλαγή</a></p>
+<p class="actions"><button type="button" class="change" data-post="13">Ζήτα αλλαγή</button></p>
 </article>
 <footer>xenos.social</footer></div>
+<div id="sheet" class="sheet" hidden><form id="change-form" class="sheet-box">
+<h2>Ζήτα αλλαγή</h2>
+<p id="sheet-post" class="sheet-post"></p>
+<label>Τι θέλετε να αλλάξει;<textarea name="message" id="msg" rows="5" required></textarea></label>
+<label>Το όνομά σας (προαιρετικά)<input name="name" type="text"></label>
+<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+<input type="hidden" name="post" id="post-field">
+<div class="sheet-actions"><button type="button" id="cancel" class="ghost">Άκυρο</button><button type="submit" id="send">Αποστολή</button></div>
+<p id="status" class="status"></p>
+</form></div>
+<script>
+var ENDPOINT = 'PASTE_APPS_SCRIPT_URL_HERE';
+var sheet = document.getElementById('sheet');
+var form = document.getElementById('change-form');
+var status = document.getElementById('status');
+var sendBtn = document.getElementById('send');
+var postField = document.getElementById('post-field');
+document.querySelectorAll('.change').forEach(function(b){
+  b.addEventListener('click', function(){
+    form.reset();
+    postField.value = b.dataset.post;
+    document.getElementById('sheet-post').textContent = 'Post #' + b.dataset.post;
+    status.textContent = '';
+    sheet.hidden = false;
+    document.getElementById('msg').focus();
+  });
+});
+document.getElementById('cancel').addEventListener('click', function(){ sheet.hidden = true; });
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  if (ENDPOINT.indexOf('PASTE_') === 0) { status.textContent = 'Η αποστολή δεν έχει ρυθμιστεί ακόμα.'; return; }
+  sendBtn.disabled = true;
+  status.textContent = 'Αποστολή…';
+  fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) })
+    .then(function(){
+      status.textContent = 'Ευχαριστούμε! Το μήνυμα στάλθηκε.';
+      form.reset();
+      setTimeout(function(){ sheet.hidden = true; status.textContent = ''; }, 2000);
+    })
+    .catch(function(){ status.textContent = 'Κάτι πήγε στραβά. Δοκιμάστε ξανά.'; })
+    .finally(function(){ sendBtn.disabled = false; });
+});
+</script>
 <script>
 document.querySelectorAll('.carousel').forEach(function(c){
   var t=c.querySelector('.track'),d=c.querySelectorAll('.dots i');
